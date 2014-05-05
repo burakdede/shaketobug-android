@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Shaketobug</string>
+    <string name="title_activity_feedback">Bug Report</string>
+    <string name="mail_intent_title">Send Mail</string>
+    <string name="screenshotContentDescription">Screenshot</string>
+    <string name="actionbar_send_string">Send</string>
+
+</resources>

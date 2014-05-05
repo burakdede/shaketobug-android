@@ -83,6 +83,7 @@ ShaketobugManager.getInstance().stopListening(this);
                                         </code></pre>
                                         <p>3- Add <code><abbr title="&lt;head&gt;">FeedbackActivity</abbr></code> inside Application tag and permission <code><abbr title="&lt;head&gt;">WRITE_EXTERNAL_STORAGE</abbr></code> (if you dont have it already) outside of Application tag. </p>
                                         <pre class="language-markup"><code class="language-markup">
+ShaketobugManager.getInstance().stopListening(this);
 <activity
     android:name="com.shaketobug.ui.FeedbackActivity"
     android:label="@string/title_activity_feedback" >

@@ -1,0 +1,226 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Shaketobug (alpha) | in-app bug reporting library for android</title>
+        <meta name="Description" content="Shaketobug is easy to use in-app bug reporting library.">
+        <meta name="Keywords" content="android, shake, library, jar, java, bug, bug report, feedback">
+        <meta name="author" content="burakdede">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Styles -->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link href="assets/css/style.css" rel="stylesheet">
+        <link href="assets/css/font-awesome.css" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300|Bree+Serif" rel="stylesheet" type="text/css">
+        <link href="assets/js/prism.css" rel="stylesheet">
+        <!--[if IE]>
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:600italic" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:700italic" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Bree+Serif:400" rel="stylesheet" type="text/css">
+        <![endif]-->
+        <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <!--[if IE 7]>
+        <link rel="stylesheet" href="assets/css/font-awesome-ie7.css">
+        <![endif]-->
+    </head>
+    <body data-twttr-rendered="true">
+        <a href="https://github.com/burakdd/shaketobug"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+        
+        <header class="masthead">
+            <div class="container">
+                <br/><br/>
+                <h1 class="font-bree-serif">Windigo type-safe rest client for android</h1>
+                <p class="font-open-sans-normal">Develop your next rest api consuming android app like a boss.</p>
+                <div id="brand">
+                    <pre>
+                    <code class="language-java">
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		ShaketobugManager.getInstance().startListening(this);
+	}
+    
+    @Override
+	protected void onDestroy() {
+		super.onDestroy();
+		ShaketobugManager.getInstance().stopListening(this);
+	}
+                    </code>
+                    </pre>
+                </div>
+                <p class="jumbo"> <a href="http://bit.ly/shaketobug-github" class="btn btn-default btn-large font-open-sans-normal"><strong>View Shaketobug on GitHub</strong></a> <a href="http://bit.ly/shaketobug-github" class="btn btn-success btn-large font-open-sans-normal"><strong>Download Jar</strong><small>(alpha)</small></a> </p>
+                <p class="share">
+                    <a href="https://twitter.com/burakdede" class="twitter-follow-button" data-show-count="false">Follow @burakdede</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                </p>
+            </div>
+            <!--end container-->  
+        </header>
+        <div class="main-content">
+            <div class="container">
+                <div class="row" id="content">
+                    <div class="span12">
+                        <div class="tab-pane active" id="howtouse">
+                                    <section class="sec-header">
+                                        <h1 class="font-bree-serif">How to use</h1>
+                                        <p>1- Add following code to <b>onCreate()</b> method of your <b>activity</b> to start listening for shake events.</p>
+                                        <pre><code class="language-java">
+ShaketobugManager.getInstance().startListening(this);
+                                        </code></pre>
+                                        <p>2- Add following code to <b>onDestroy()</b> method of your <b>activity</b> to stop listening for shake events and to prevent memory leaks.</p>
+                                        <pre><code class="language-java">
+ShaketobugManager.getInstance().stopListening(this);
+                                        </code></pre>
+                                        <p>3- Add <code><abbr title="&lt;head&gt;">FeedbackActivity</abbr></code> inside Application tag and permission <code><abbr title="&lt;head&gt;">WRITE_EXTERNAL_STORAGE</abbr></code> if you dont have it already outside of Application tag. </p>
+                                        <pre><code class="language-java">
+<!-- exported activity from library -->
+<activity
+    android:name="com.shaketobug.ui.FeedbackActivity"
+    android:label="@string/title_activity_feedback" >
+    <intent-filter>
+        <action android:name="com.shaketobug.ui.FeedbackActivity" />
+
+        <category android:name="android.intent.category.DEFAULT" />
+    </intent-filter>
+</activity>
+
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+                                        </code></pre>
+                                        <p>4- You can also customize ui of the library and configuration with instance of <code><abbr title="&lt;head&gt;">ShaketobugConfig</abbr></code> class. Here is sample one. <b>Dont forget to update email address field to your support email</b></p>
+                                        <pre><code class="language-java">
+ShaketobugConfig config = new ShaketobugConfig();
+config.setActionbarColor(Color.RED);
+config.setActionbarTitle("Sample Title");
+config.setEmailSubjectField("Bug Report From User");
+config.setEmailToField("burakdede87@gmail.com");
+config.setPencilColor(Color.YELLOW);
+config.setUseDarkIcons(false);
+config.setActionbarBackgrounDrawable(R.drawable.yellow_header_background);
+// notify library to use this config instead of default one.
+ShaketobugManager.getInstance().setConfig(setupConfig());
+                                        </code></pre>
+                                    </section>
+                                    <section class="sec-header">
+                                        <h1 class="font-bree-serif">Model/Response types</h1>
+                                        <p>Your model response type do not need extra thing just plain old java objects, olny thing you need map your fields according to your json response.</p>
+                                        <p>Here is sample json response from api.</p>
+                                        <p><a href="http://api.openweathermap.org/data/2.5/weather?lat=41.163267&lon=29.094187">OpenWeatherApi Call</a></p>
+                                        <pre>
+                                            <code class="language-javascript">
+{"coord":{"lon":29.09,"lat":41.16},"sys":{"message":0.0034,"country":"TR","sunrise":1397877445,"sunset":1397926076},"weather":[{"id":802,"main":"Clouds","description":"scattered clouds","icon":"03d"}],"base":"cmc stations","main":{"temp":289.15,"pressure":1012,"humidity":59,"temp_min":289.15,"temp_max":289.15},"wind":{"speed":4.1,"deg":180},"clouds":{"all":40},"dt":1397915400,"id":750662,"name":"Beykoz","cod":200}
+                                            </code>
+                                        </pre>
+                                        <p>Here is your model classes to map json data</p>
+                                        <pre>
+                                            <code class="language-java">
+public class ForecastResponse {
+    private String name;
+    private MainResponse main;
+    private WindResponse wind;
+    private List<WeatherResponse> weather;
+}
+
+public class MainResponse {
+    private double temp, temp_min, temp_max;
+    private int humidity;
+}
+
+public class WeatherResponse {
+    private String description, icon;
+}
+
+public class WindResponse {
+    private float speed;
+}
+                                            </code>
+                                        </pre>
+                                        <p> Windigo will take care of the rest whether its parsing whether initializing your model objects. After your make the call they are ready to use.</p>
+                                    </section>
+                                    <section class="sec-header">
+                                        <h1 class="font-bree-serif">Download</h1>
+                                        <p><a href="http://bit.ly/windigo-jar">Downloar Jar</a></p>
+                                    </section>
+                                    <section class="sec-header">
+                                        <h1 class="font-bree-serif">License</h1>
+                                        <p>Windigo distributed with Apache 2.0 License</p>
+                                        <pre>
+                                            <code class="language-java">
+Copyright (C) Burak Dede.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+                                            </code>
+                                        </pre>
+                                    </section>
+                                </div>
+                                <!--end howtouse-content-->
+                        <!--end tabbable-->
+                        <div class="well align-center">
+                            <h4>For any queries or issues. <a href="https://github.com/burakdd/shaketobug/issues">Submit issues</a> on github or Contact me <a href="mailto:burakdede87@gmail.com">burakdede87@gmail.com</a></h4>
+                        </div>
+                        <!--end well-->
+                    
+                    </div>
+                    <!--end span12-->
+                </div>
+                <!--end row-->
+            </div>
+            <!--end container-->
+        </div>
+        <!--end main-content-->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="span6">
+                        <p>© <a href="http://blog.burakdede.com">Burak Dede</a> 2014</p>
+                    </div>
+                    <div class="span2 offset4">
+                        <p><a href="#" id="top">Go To Top</a></p>
+                    </div>
+                    <!--end span2-->
+                </div>
+                <!--end row-->  
+            </div>
+            <!--end container-->  
+        </footer>
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="assets/js/prism.js"></script>
+        <script type="text/javascript" src="assets/js/respond.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            $(function(){
+            	//footer link to got top
+            	gotoTop();
+            	function gotoTop(){
+            		 // scroll body to 0px on click
+            			$('a#top').on('click',function () {
+            				$('body,html').animate({
+            					scrollTop: 0
+            				}, 800);
+            				return false;
+            			});
+            	 };
+            });
+        </script>
+</html>

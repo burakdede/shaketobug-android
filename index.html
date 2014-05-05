@@ -38,8 +38,8 @@
         <header class="masthead">
             <div class="container">
                 <br/><br/>
-                <h1 class="font-bree-serif">Windigo type-safe rest client for android</h1>
-                <p class="font-open-sans-normal">Develop your next rest api consuming android app like a boss.</p>
+                <h1 class="font-bree-serif">Shaketobug is in-app bug reporting library for android</h1>
+                <p class="font-open-sans-normal">Make getting feedback for your app easy.</p>
                 <div id="brand">
                     <pre>
                     <code class="language-java">
@@ -109,42 +109,6 @@ config.setActionbarBackgrounDrawable(R.drawable.yellow_header_background);
 // notify library to use this config instead of default one.
 ShaketobugManager.getInstance().setConfig(setupConfig());
                                         </code></pre>
-                                    </section>
-                                    <section class="sec-header">
-                                        <h1 class="font-bree-serif">Model/Response types</h1>
-                                        <p>Your model response type do not need extra thing just plain old java objects, olny thing you need map your fields according to your json response.</p>
-                                        <p>Here is sample json response from api.</p>
-                                        <p><a href="http://api.openweathermap.org/data/2.5/weather?lat=41.163267&lon=29.094187">OpenWeatherApi Call</a></p>
-                                        <pre>
-                                            <code class="language-javascript">
-{"coord":{"lon":29.09,"lat":41.16},"sys":{"message":0.0034,"country":"TR","sunrise":1397877445,"sunset":1397926076},"weather":[{"id":802,"main":"Clouds","description":"scattered clouds","icon":"03d"}],"base":"cmc stations","main":{"temp":289.15,"pressure":1012,"humidity":59,"temp_min":289.15,"temp_max":289.15},"wind":{"speed":4.1,"deg":180},"clouds":{"all":40},"dt":1397915400,"id":750662,"name":"Beykoz","cod":200}
-                                            </code>
-                                        </pre>
-                                        <p>Here is your model classes to map json data</p>
-                                        <pre>
-                                            <code class="language-java">
-public class ForecastResponse {
-    private String name;
-    private MainResponse main;
-    private WindResponse wind;
-    private List<WeatherResponse> weather;
-}
-
-public class MainResponse {
-    private double temp, temp_min, temp_max;
-    private int humidity;
-}
-
-public class WeatherResponse {
-    private String description, icon;
-}
-
-public class WindResponse {
-    private float speed;
-}
-                                            </code>
-                                        </pre>
-                                        <p> Windigo will take care of the rest whether its parsing whether initializing your model objects. After your make the call they are ready to use.</p>
                                     </section>
                                     <section class="sec-header">
                                         <h1 class="font-bree-serif">Download</h1>

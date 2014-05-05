@@ -20,14 +20,14 @@ Shaketobug is easy to integrate.
 Shaketobug allow developers to customize some aspects of the library like feedback activity ui, some configuration data like support email etc.
 
 ```java
-	ShaketobugConfig config = new ShaketobugConfig();
-	config.setActionbarColor(Color.RED);
-	config.setActionbarTitle("Sample Title");
-	config.setEmailSubjectField("Bug Report From User");
-	config.setEmailToField("burakdede87@gmail.com");
-	config.setPencilColor(Color.YELLOW);
-	config.setUseDarkIcons(false);
-	config.setActionbarBackgrounDrawable(R.drawable.yellow_header_background);
+ShaketobugConfig config = new ShaketobugConfig();
+config.setActionbarColor(Color.RED);
+config.setActionbarTitle("Sample Title");
+config.setEmailSubjectField("Bug Report From User");
+config.setEmailToField("burakdede87@gmail.com");
+config.setPencilColor(Color.YELLOW);
+config.setUseDarkIcons(false);
+config.setActionbarBackgrounDrawable(R.drawable.yellow_header_background);
 ```
 # Download
 

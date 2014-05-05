@@ -83,18 +83,17 @@ ShaketobugManager.getInstance().stopListening(this);
                                         </code></pre>
                                         <p>3- Add <code><abbr title="&lt;head&gt;">FeedbackActivity</abbr></code> inside Application tag and permission <code><abbr title="&lt;head&gt;">WRITE_EXTERNAL_STORAGE</abbr></code> (if you dont have it already) outside of Application tag. </p>
                                         <pre class="language-markup"><code class="language-markup">
-ShaketobugManager.getInstance().stopListening(this);
-<activity
+&lt;activity
     android:name="com.shaketobug.ui.FeedbackActivity"
-    android:label="@string/title_activity_feedback" >
-    <intent-filter>
-        <action android:name="com.shaketobug.ui.FeedbackActivity" />
+    android:label="@string/title_activity_feedback" &gt;
+    &lt;intent-filter&gt;
+        &lt;action android:name="com.shaketobug.ui.FeedbackActivity" /&gt;
 
-        <category android:name="android.intent.category.DEFAULT" />
-    </intent-filter>
-</activity>
+        &lt;category android:name="android.intent.category.DEFAULT" /&gt;
+    &lt;/intent-filter&gt;
+&lt;/activity&gt;
 
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+&lt;uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /&gt;
                                         </code></pre>
                                         <p>4- You can also customize ui of the library and configuration with instance of <code><abbr title="&lt;head&gt;">ShaketobugConfig</abbr></code> class. Here is sample one. <b>Dont forget to update email address field to your support email</b></p>
                                         <pre><code class="language-java">

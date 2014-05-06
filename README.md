@@ -15,6 +15,12 @@ Shaketobug is easy to integrate.
 
 * Let user shake the phone and report bug with additional device info.
 
+
+![Screen1](https://github.com/burakdd/shaketobug/raw/master/screenshots/screen1.png)
+![Screen2](https://github.com/burakdd/shaketobug/raw/master/screenshots/screen2.png)
+![Screen3](https://github.com/burakdd/shaketobug/raw/master/screenshots/screen3.png)
+
+
 # Customization
 
 Shaketobug allow developers to customize some aspects of the library like feedback activity ui, some configuration data like support email etc.

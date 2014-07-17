@@ -40,6 +40,7 @@ public class ScreenUtils {
 	 * @return {@link Bitmap}
 	 */
 	public static Bitmap takeScreenshot(View rootView) {
+        rootView.destroyDrawingCache();
 		rootView.setDrawingCacheEnabled(true);
 		Bitmap screenBitmap = rootView.getDrawingCache();
 		return screenBitmap;

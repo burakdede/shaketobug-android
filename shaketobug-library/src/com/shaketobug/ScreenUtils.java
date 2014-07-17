@@ -40,6 +40,7 @@ public class ScreenUtils {
 	 * @return {@link Bitmap}
 	 */
 	public static Bitmap takeScreenshot(View rootView) {
+        rootView.destroyDrawingCache();
 		rootView.setDrawingCacheEnabled(true);
 		Bitmap screenBitmap = rootView.getDrawingCache();
 		return screenBitmap;
@@ -74,7 +75,7 @@ public class ScreenUtils {
 	 */
 	public static String saveScreenshot(Bitmap bitmap) {
 		String externalPath = Environment.getExternalStorageDirectory() + "/";
-		String filePath = externalPath + createNameforFile();
+		String filePath = externalPath + createNameforFile() + ".jpeg";
 		File imageFile = new File(filePath);
 		FileOutputStream fos;
 

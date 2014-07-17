@@ -75,7 +75,7 @@ public class ScreenUtils {
 	 */
 	public static String saveScreenshot(Bitmap bitmap) {
 		String externalPath = Environment.getExternalStorageDirectory() + "/";
-		String filePath = externalPath + createNameforFile();
+		String filePath = externalPath + createNameforFile() + ".jpeg";
 		File imageFile = new File(filePath);
 		FileOutputStream fos;
 

@@ -1,7 +1,7 @@
 /assets/*
-/bin/*
-/gen/*
-/libs/*
+bin
+gen
+libs
 /res/*
 
 
